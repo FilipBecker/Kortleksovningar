@@ -21,7 +21,7 @@ function Randomize(lek) {
     };
     return newLek;
 };
-let ranKortlek = Randomize(kortlek)
+let ranKortlek = Randomize(kortlek);
 
 function addCard(hand) {
     hand.push(ranKortlek[0]);
@@ -29,8 +29,13 @@ function addCard(hand) {
 };
 
 let spelareKort = [];
-for (i = 0; i < 5; i++) {
+for (i = 0; i < 25; i++) {
     addCard(spelareKort);
 };
 
+function IsCardIn(hand) {
+    return hand.includes(["kung", "hjärter"]);
+};
+
 console.log(spelareKort);
+console.log(IsCardIn(spelareKort));
