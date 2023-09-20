@@ -21,5 +21,16 @@ function Randomize(lek) {
     };
     return newLek;
 };
+let ranKortlek = Randomize(kortlek)
 
-console.log(Randomize(kortlek));
+function addCard(hand) {
+    hand.push(ranKortlek[0]);
+    ranKortlek.splice(0, 1);
+};
+
+let spelareKort = [];
+for (i = 0; i < 5; i++) {
+    addCard(spelareKort);
+};
+
+console.log(spelareKort);
