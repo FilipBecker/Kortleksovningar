@@ -29,8 +29,10 @@ function addCard(hand) {
 };
 
 let spelareKort = [];
-for (i = 0; i < 25; i++) {
+let datorKort = [];
+for (i = 0; i < 5; i++) {
     addCard(spelareKort);
+    addCard(datorKort);
 };
 
 function IsCardIn(hand) {
@@ -43,5 +45,16 @@ function IsCardIn(hand) {
     return result;
 };
 
-console.log(spelareKort);
-console.log(IsCardIn(spelareKort));
+function compareEss(hand1, hand2) {
+    let ess1 = hand1.filter(kort => kort[0] == "ess");
+    let ess2 = hand2.filter(kort => kort[0] == "ess");
+    if (ess1.length > ess2.length) {
+        console.log("Spelaren har fler ess.");
+    } else if (ess2.length > ess1.length) {
+        console.log("datorn har fler ess.");
+    } else {
+        console.log("båda har lika många ess.");
+    };
+};
+
+compareEss(spelareKort, datorKort);
