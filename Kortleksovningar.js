@@ -34,7 +34,13 @@ for (i = 0; i < 25; i++) {
 };
 
 function IsCardIn(hand) {
-    return hand.includes(["kung", "hjärter"]);
+    let result = false;
+    hand.forEach((kort) => {
+        if (kort[0] == "kung" && kort[1] == "hjärter") {
+            result = true;
+        };
+    });
+    return result;
 };
 
 console.log(spelareKort);
