@@ -1,6 +1,6 @@
 const sviter = ["hjärter", "ruter", "klöver", "spader"];
 const valorer = ["knekt", "dam", "kung", "ess"];
-const kortlek = [];
+let kortlek = [];
 
 sviter.forEach(s => {
     for (let v = 2; v < 15; v++) {
@@ -12,4 +12,14 @@ sviter.forEach(s => {
     };
 });
 
-console.log(kortlek);
+function Randomize(lek) {
+    let newLek = [];
+    while (lek.length > 0) {
+        const num = Math.round(Math.random() * (lek.length - 1));
+        newLek.push(lek[num]);
+        lek.splice(num, 1);
+    };
+    return newLek;
+};
+
+console.log(Randomize(kortlek));
